@@ -1,0 +1,24 @@
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+ body { background: #fee365; }
+.box { position: relative; max-width: 750px; margin: 0 auto; }
+.box .img01 {
+	display: inline-block; 
+	width: 100%;
+}
+.box .drawBtn { 
+	position: absolute; 
+	width: 10rem; 
+	height: auto; 
+	left: 50%; 
+	margin-left: -5rem; 
+	transform-origin:50% 60%;
+}
+.main { margin-top: 30px; }
+.main i { display: inline-block; border-radius: 50%; width: 20px; height: 19px; background-color: red; margin-right: 10px; color: #ccc; font-size: 8px; padding-left: 5px; padding-top: 2px; }
+.main p { padding: 0 30px; font-size: 15px; margin-bottom: 5px; }
+.layout  .btn { display: block; width: 80%; height: 40px; background-color: #22ac38; border: none; color: #fff; font-size: 18px; margin: 15px auto; position: relative; }
+.layout .link { font-size: 8px; text-decoration: none; position: absolute; right: 14px; top: 16px; color: #fff; opacity: 0.7; }
+.layout .sign { text-align: center; margin-bottom: 10px; font-size: 18px;}
+.foot ul li { float: left; width: 20%; }
+.foot ul li img { border-radius: 50%; display: block; margin: 0 auto; }
+.foot ul li p { text-align: center; font-size: 10px; }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+<script src="js/jquery.js"></script>
+<script src="js/index.js"></script>
+<title>转盘抽奖</title>
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="layout">
+		<div class="box">
+			<img src="img/bg.png" class="img01" alt="">
+			<img src="images/one.png" id="drawBtn" class="drawBtn">
+		</div>
+		<div class="main">
+			<p><i>1</i>手机银行账户“账户功能停止”48小时内资金损失均可享受保障</p>
+			<p><i>2</i>保障额度为6万元/人</p>
+			<p><i>3</i>领取成功后，次日零时起保单生效，保险期限为6个月</p>
+		</div>
+		<button class="btn">微信客服<a href="#" class="link">点击进入微信&gt;</a></button>
+		<p class="sign">这些好友都注册了</p>
+		<div class="foot">
+			<ul>
+				<li>
+					<img src="img/photo.png" alt="">
+					<p>小小花</p>
+					<p>抽中300现金</p>
+				</li>
+				<li>
+					<img src="img/photo.png" alt="">
+					<p>小小花</p>
+					<p>抽中300现金</p>
+				</li>
+				<li>
+					<img src="img/photo.png" alt="">
+					<p>小小花</p>
+					<p>抽中300现金</p>
+				</li>
+				<li>
+					<img src="img/photo.png" alt="">
+					<p>小小花</p>
+					<p>抽中300现金</p>
+				</li>
+				<li>
+					<img src="img/photo.png" alt="">
+					<p>小小花</p>
+					<p>抽中300现金</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	
+</script>
+
+
+
+
+
+<script>
+$(".box .img01").load(function() {
+	var obj = $(".drawBtn");
+	var hei = $(this).height();
+	var hei2 = obj.height();
+	obj.css("top",(hei - hei2)/2);
+});
+$(".box1 .img01").load(function() {
+	var obj = $(".drawBtn2");
+	var hei = $(this).height();
+	var hei2 = obj.height();
+	obj.css("top",(hei - hei2)/2);
+});
+</script>
+<script>
+function callbackA(ind)
+{
+	if(ind == 2||ind == 5||ind == 8){
+		ind = '继续努力';
+		alert("第一个回调"+ind);
+	}
+	else if(ind == 1){
+		ind = '恭喜你，获得价值169元陶瓷养生锅';
+		alert("第一个回调"+ind);
+	}
+	else if(ind == 3 || ind == 6){
+		ind = '恭喜你，获得价值99元毛绒玩具';
+		alert("第一个回调"+ind);
+
+	}
+	else if(ind == 4||ind==7){
+		ind = '恭喜你，获得20M流量券';
+		alert("第一个回调"+ind);
+	}
+};
+var newdraw =new turntableDraw('.drawBtn',{
+	share:8,
+	// share:12,
+	speed:"3s",
+	velocityCurve:"ease",
+	weeks:6,
+	callback:function(num)
+	{
+		callbackA(num);
+	},
+});
+/*var newdraw2 =new turntableDraw('.drawBtn2',{
+	share:12,
+	speed:"3s",
+	velocityCurve:"ease",
+	weeks:6,
+	callback:function(num)
+	{
+		callbackB(num);
+	},
+});*/
+		var temp ;
+$(".drawBtn").click(function(event) {
+	//ajax
+	// alert(123);
+	// newdraw.goto(parseInt(Math.random()*8)+1);
+	// newdraw.goto(parseInt(6));
+	// function move(){
+		if(temp){
+			newdraw.goto(parseInt(4));
+		}else{
+			newdraw.goto(parseInt(6));
+		}
+		temp = !temp;
+		return temp;
+	// }
+	// move();
+
+});
+/*$(".drawBtn2").click(function(event) {
+	//ajax
+	newdraw2.goto(parseInt(Math.random()*12)+1);
+});*/
+</script>
